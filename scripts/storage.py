@@ -79,7 +79,7 @@ class Scripts(scripts.Script):
                 "size": size,
                 "model_hash": model_hash,
                 "model": model,
-                "lora_hashes": lora_hashes,
+                # "lora_hashes": lora_hashes,
                 "image": image_bytes
             })
         return True
