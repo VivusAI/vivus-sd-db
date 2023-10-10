@@ -11,7 +11,7 @@ from tssplit import tssplit
 mongo_host = os.environ.get('DB_HOST', '10.5.20.107')
 mongo_port = int(os.environ.get('DB_PORT', 27017))
 mongo_username = os.environ.get('DB_USER', 'vivus')
-mongo_password = os.environ.get('DB_PASS', 'vivus123!')
+mongo_password = os.environ.get('DB_PASS', 'vivus123')
 
 creds = f"{mongo_username}:{mongo_password}@" if mongo_username and mongo_password else ""
 client = MongoClient(f"mongodb://{creds}{mongo_host}:{mongo_port}/")
