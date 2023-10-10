@@ -33,7 +33,7 @@ class Scripts(scripts.Script):
     def ui(self, is_img2img):
         checkbox_save_to_db = gr.inputs.Checkbox(label="Save to DB", default=True)
         database_name = gr.inputs.Textbox(label="Database Name", default="vivusdb")
-        collection_name = gr.inputs.Textbox(label="Collection Name", default="vivus-diffussion")
+        collection_name = gr.inputs.Textbox(label="Collection Name", default="vivus-diffusion")
         return [checkbox_save_to_db, database_name, collection_name]
 
     def postprocess(self, p, processed, checkbox_save_to_db, database_name, collection_name):
