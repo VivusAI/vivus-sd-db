@@ -57,9 +57,9 @@ class Scripts(scripts.Script):
             size = tuple(map(int, input_dict["Size"].split("x")))
             model_hash = input_dict["Model hash"]
             model = input_dict["Model"]
-            if input_dict["Lora hashes"] is None
+            if input_dict["Lora hashes"] is None:
                 lora_hashes = "none"
-            else
+            else:
                 lora_hashes = input_dict["Lora hashes"]
 
             image = processed.images[i]
