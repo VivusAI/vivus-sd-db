@@ -8,15 +8,10 @@ from pymongo import MongoClient
 import shlex
 from tssplit import tssplit
 
-# mongo_host = os.environ.get('DB_HOST', '10.5.20.107')
-# mongo_port = int(os.environ.get('DB_PORT', 27017))
-# mongo_username = os.environ.get('DB_USER', 'vivus')
-# mongo_password = os.environ.get('DB_PASS', 'vivus123')
-
-mongo_host = '10.5.20.107'
-mongo_port = '27017'
-mongo_username = 'vivus'
-mongo_password = 'vivus123'
+mongo_host = os.environ.get('DB_HOST', '10.5.20.107')
+mongo_port = int(os.environ.get('DB_PORT', 27017))
+mongo_username = os.environ.get('DB_USER', 'vivus')
+mongo_password = os.environ.get('DB_PASS', 'vivus123')
 
 creds = f"{mongo_username}:{mongo_password}@" if mongo_username and mongo_password else ""
 client = MongoClient(f"mongodb://{creds}{mongo_host}:{mongo_port}/")
@@ -62,7 +57,8 @@ class Scripts(scripts.Script):
             size = tuple(map(int, input_dict["Size"].split("x")))
             model_hash = input_dict["Model hash"]
             model = input_dict["Model"]
-            # lora_hashes = input_dict["Lora hashes"]
+            if input_dict["Lora hashes"]
+                lora_hashes = input_dict["Lora hashes"]
 
             image = processed.images[i]
             buffer = BytesIO()
@@ -79,7 +75,8 @@ class Scripts(scripts.Script):
                 "size": size,
                 "model_hash": model_hash,
                 "model": model,
-                # "lora_hashes": lora_hashes,
+                if lora_hashes
+                    "lora_hashes": lora_hashes,
                 "image": image_bytes
             })
         return True
