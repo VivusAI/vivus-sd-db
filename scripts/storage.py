@@ -59,6 +59,8 @@ class Scripts(scripts.Script):
             model = input_dict["Model"]
             if input_dict["Lora hashes"]:
                 lora_hashes = input_dict["Lora hashes"]
+            else:
+                lora_hashes = "none"
 
             image = processed.images[i]
             buffer = BytesIO()
@@ -75,8 +77,7 @@ class Scripts(scripts.Script):
                 "size": size,
                 "model_hash": model_hash,
                 "model": model,
-                if lora_hashes:
-                    "lora_hashes": lora_hashes,
+                "lora_hashes": lora_hashes,
                 "image": image_bytes
             })
         return True
