@@ -62,7 +62,7 @@ class Scripts(scripts.Script):
             size = tuple(map(int, input_dict["Size"].split("x")))
             model_hash = input_dict["Model hash"]
             model = input_dict["Model"]
-            lora_hashes = input_dict["Lora hashes"]
+            # lora_hashes = input_dict["Lora hashes"]
 
             image = processed.images[i]
             buffer = BytesIO()
