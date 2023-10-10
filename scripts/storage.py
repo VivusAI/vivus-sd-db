@@ -14,7 +14,7 @@ mongo_username = os.environ.get('DB_USER', 'vivus')
 mongo_password = os.environ.get('DB_PASS', 'vivus123')
 
 creds = f"{mongo_username}:{mongo_password}@" if mongo_username and mongo_password else ""
-client = MongoClient(f"mongodb://{creds}{mongo_host}:{mongo_port}/")
+client = MongoClient(f"mongodb://{creds}{mongo_host}:{mongo_port}/?authMechanism=DEFAULT&authSource=admin")
 
 
 def get_collection(database_name, collection_name):
