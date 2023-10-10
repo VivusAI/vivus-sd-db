@@ -8,7 +8,7 @@ from pymongo import MongoClient
 import shlex
 from tssplit import tssplit
 
-mongo_host = os.environ.get('DB_HOST', '10.5.20.107 ')
+mongo_host = os.environ.get('DB_HOST', '10.5.20.107')
 mongo_port = int(os.environ.get('DB_PORT', 27017))
 mongo_username = os.environ.get('DB_USER', 'vivus')
 mongo_password = os.environ.get('DB_PASS', 'vivus123!')
